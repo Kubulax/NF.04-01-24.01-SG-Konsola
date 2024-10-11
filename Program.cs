@@ -66,7 +66,14 @@ namespace Konsolowa2
 
             string pesel = Console.ReadLine();
 
-            Console.WriteLine("Płeć: " + CheckGender(pesel));
+            if(CheckGender(pesel) == "M")
+            {
+                Console.WriteLine("Mężczyzna");
+            }
+            else
+            {
+                Console.WriteLine("Kobieta");
+            }
 
             bool peselIsValid = ValidatePesel(pesel);
             if (peselIsValid)
