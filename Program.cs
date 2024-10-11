@@ -24,29 +24,33 @@ namespace Konsolowa2
                 peselDigits[i] = int.Parse(pesel[i].ToString());
             }
 
-            peselDigits[0] *= 1;
-            peselDigits[1] *= 3;
-            peselDigits[2] *= 7;
-            peselDigits[3] *= 9;
-            peselDigits[4] *= 1;
-            peselDigits[5] *= 3;
-            peselDigits[6] *= 7;
-            peselDigits[7] *= 9;
-            peselDigits[8] *= 1;
-            peselDigits[9] *= 3;
+            Console.WriteLine();
+
+            peselDigits[0] *= 1; //0
+            peselDigits[1] *= 3; //2
+            peselDigits[2] *= 7; //0
+            peselDigits[3] *= 9; //7
+            peselDigits[4] *= 1; //0
+            peselDigits[5] *= 3; //8
+            peselDigits[6] *= 7; //0
+            peselDigits[7] *= 9; //3
+            peselDigits[8] *= 1; //6
+            peselDigits[9] *= 3; //2
 
             int S = 0;
-            foreach (int digit in peselDigits)
+            for(int i = 0; i < 10; i++)
             {
-                S += digit;
+                S += peselDigits[i];
             }
 
             int M = S % 10;
 
             int R = 0;
+
             if (M != 0)
             {
                 R = 10 - M;
+                
             }
 
             if (peselDigits[10] == R)
@@ -60,15 +64,9 @@ namespace Konsolowa2
         {
             Console.WriteLine("Podaj numer pesel: ");
 
-            string pesel = "55030101193";
+            string pesel = Console.ReadLine();
 
-            //string userInputPesel = Console.ReadLine();
-            //if (userInputPesel != String.Empty && !string.IsNullOrWhiteSpace(userInputPesel) && userInputPesel.Length != 11)
-            //{
-            //    pesel = userInputPesel;
-            //}
-
-            Console.WriteLine(CheckGender(pesel));
+            Console.WriteLine("Płeć: " + CheckGender(pesel));
 
             bool peselIsValid = ValidatePesel(pesel);
             if (peselIsValid)
