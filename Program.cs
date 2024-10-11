@@ -16,6 +16,13 @@ namespace Konsolowa2
             }
         }
 
+        /**********************************************
+        nazwa funkcji: ValidatePesel
+        opis funkcji: Funkcja oblicza sumę kontrolną podanego numeru pesel oraz porównuje ją z sumą kontrolną podanego numeru pesel, tym sposobem sprawdza poprawność formy podanego numeru pesel.
+        parametry: pesel - zmienna typu string przechowywująca podany przez użytkownika numer pesel do sprawdzenia.
+        zwracany typ i opis: bool, zwracane jest false jeżeli suma kontrolna jest równa podanej (numer pesel jest nieprawidłowy) oraz true jeżeli suma kontrolna nie jest równa podanej (numer pesel jest prawidłowy).
+        autor: PESEL
+        ***********************************************/
         static bool ValidatePesel(string pesel) 
         {
             int[] peselDigits = new int[11];
